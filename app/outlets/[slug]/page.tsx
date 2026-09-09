@@ -46,7 +46,7 @@ function SectionCard({
 }) {
   return (
     <section
-      className={`rounded-xl border border-slate-200 bg-white p-5 shadow-sm ${className}`}
+      className={`rounded border border-slate-200 bg-white p-5 shadow-sm ${className}`}
     >
       <SectionHeading>{title}</SectionHeading>
       <div className="mt-3">{children}</div>
@@ -66,7 +66,7 @@ function StatCard({
   foot?: string;
 }) {
   return (
-    <div className="rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
+    <div className="rounded border border-slate-200 bg-white p-4 shadow-sm">
       <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">
         {label}
       </p>
@@ -253,13 +253,13 @@ export default async function OutletDetail({
 
   return (
     <div className="space-y-8">
-      <div className="flex flex-wrap items-center justify-between gap-3 rounded-2xl border border-slate-800 bg-slate-900 px-6 py-4 text-white shadow-sm">
+      <div className="flex flex-wrap items-center justify-between gap-3 rounded border border-slate-800 bg-slate-900 px-6 py-4 text-white shadow-sm">
         <p className="text-sm font-bold uppercase tracking-widest text-slate-300">
           Sales Investigator
         </p>
         <a
           href={`/outlets/${slug}/investigate?endDate=${endDate}`}
-          className="rounded-lg bg-indigo-600 px-5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-700"
+          className="rounded bg-indigo-600 px-5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-700"
         >
           Run Investigation
         </a>
@@ -281,7 +281,7 @@ export default async function OutletDetail({
             </h1>
             {finding.status !== "NORMAL" && (
               <span
-                className={`inline-flex items-center gap-1.5 rounded-lg border px-3 py-1 text-sm font-bold uppercase ${severityBadge[finding.severity].color}`}
+                className={`inline-flex items-center gap-1.5 rounded border px-3 py-1 text-sm font-bold uppercase ${severityBadge[finding.severity].color}`}
               >
                 <span>{severityBadge[finding.severity].emoji}</span>
                 {finding.severity}
@@ -308,7 +308,7 @@ export default async function OutletDetail({
           </p>
         </div>
 
-        <div className="mt-4 rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
+        <div className="mt-4 rounded border border-slate-200 bg-white p-5 shadow-sm">
           <div className="flex flex-wrap items-end justify-between gap-4">
             <div>
               <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">
@@ -338,7 +338,7 @@ export default async function OutletDetail({
           </div>
         </div>
 
-        <div className="mt-4 flex flex-wrap items-center justify-between gap-3 rounded-xl border border-indigo-200 bg-white p-5 shadow-sm">
+        <div className="mt-4 flex flex-wrap items-center justify-between gap-3 rounded border border-indigo-200 bg-white p-5 shadow-sm">
           <div>
             <h2 className="font-semibold text-slate-900">AI Investigation</h2>
             <p className="mt-1 max-w-xl text-sm text-slate-500">
@@ -350,7 +350,7 @@ export default async function OutletDetail({
           </div>
           <a
             href={`/outlets/${slug}/investigate?endDate=${endDate}`}
-            className="shrink-0 rounded-lg bg-indigo-600 px-5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-700"
+            className="shrink-0 rounded bg-indigo-600 px-5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-700"
           >
             Run AI investigation →
           </a>
@@ -358,7 +358,7 @@ export default async function OutletDetail({
       </section>
 
       {configError && (
-        <div className="rounded-xl border border-amber-200 bg-amber-50 p-4 text-sm text-amber-800">
+        <div className="rounded border border-amber-200 bg-amber-50 p-4 text-sm text-amber-800">
           {configError}
         </div>
       )}
@@ -450,15 +450,15 @@ export default async function OutletDetail({
                         </td>
                         <td className="py-2.5">
                           {days > 0 && verified ? (
-                            <span className="inline-flex items-center rounded-full border border-emerald-200 bg-emerald-50 px-2 py-0.5 text-xs font-semibold text-emerald-800">
+                            <span className="inline-flex items-center rounded border border-emerald-200 bg-emerald-50 px-2 py-0.5 text-xs font-semibold text-emerald-800">
                               ✓ Confirmed
                             </span>
                           ) : days > 0 ? (
-                            <span className="inline-flex items-center rounded-full border border-amber-200 bg-amber-50 px-2 py-0.5 text-xs font-semibold text-amber-800">
+                            <span className="inline-flex items-center rounded border border-amber-200 bg-amber-50 px-2 py-0.5 text-xs font-semibold text-amber-800">
                               Unverified
                             </span>
                           ) : (
-                            <span className="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2 py-0.5 text-xs font-semibold text-slate-600">
+                            <span className="inline-flex items-center rounded border border-slate-200 bg-slate-50 px-2 py-0.5 text-xs font-semibold text-slate-600">
                               Observed
                             </span>
                           )}
@@ -478,7 +478,7 @@ export default async function OutletDetail({
         )}
       </SectionCard>
 
-      <details className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
+      <details className="rounded border border-slate-200 bg-white p-5 shadow-sm">
         <summary className="flex cursor-pointer list-none items-center justify-between font-semibold">
           <span>Evidence gaps &amp; limitations · {DATA_GAPS.length} gaps</span>
           <span className="text-slate-400">▼</span>
@@ -512,7 +512,7 @@ export default async function OutletDetail({
 
       <section
         id="evidence"
-        className="scroll-mt-24 rounded-xl border border-slate-200 bg-white p-5 shadow-sm"
+        className="scroll-mt-24 rounded border border-slate-200 bg-white p-5 shadow-sm"
       >
         <SectionHeading>Evidence</SectionHeading>
         <div className="mt-2">
@@ -598,7 +598,7 @@ function StockoutCard({ evidence }: { evidence: Evidence }) {
         </p>
         <div className="flex items-center gap-2">
           {evidence.zeroSalesVerified && (
-            <span className="inline-flex items-center rounded-full border border-emerald-200 bg-emerald-100 px-2 py-0.5 text-xs font-semibold text-emerald-800">
+            <span className="inline-flex items-center rounded border border-emerald-200 bg-emerald-100 px-2 py-0.5 text-xs font-semibold text-emerald-800">
               Zero sales verified
             </span>
           )}

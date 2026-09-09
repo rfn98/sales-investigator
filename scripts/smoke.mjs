@@ -69,9 +69,9 @@ try {
       "bekasi:",
       home.text.includes("Bekasi"),
       "stockoutCard:",
-      home.text.includes("Stockout events"),
+      home.text.includes("INVENTORY SIGNALS"),
       "summaryCards:",
-      home.text.includes("Outlets"),
+      home.text.includes("OUTLETS"),
     );
 
     const detail = await get("/outlets/outlet-bekasi?endDate=2026-09-07");
@@ -97,6 +97,26 @@ try {
 
     const notFound = await get("/outlets/outlet-zzz");
     console.log("Unknown outlet HTTP:", notFound.status);
+
+    const invest = await get("/outlets/outlet-bekasi/investigate?endDate=2026-09-07");
+    console.log(
+      "Investigate:",
+      invest.status,
+      "dossierHeader:",
+      invest.text.includes("AI INVESTIGATION"),
+      "verdict:",
+      invest.text.includes("INVESTIGATION VERDICT"),
+      "attribution:",
+      invest.text.includes("REVENUE ATTRIBUTION"),
+      "whatWeKnow:",
+      invest.text.includes("WHAT WE KNOW"),
+      "recommendedActions:",
+      invest.text.includes("Recommended actions"),
+      "nextVectors:",
+      invest.text.includes("Next vectors"),
+      "evidenceGaps:",
+      invest.text.includes("Evidence gaps"),
+    );
   }
 } catch (err) {
   console.error("SMOKE ERROR:", err);

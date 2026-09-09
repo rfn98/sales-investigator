@@ -1,1 +1,114 @@
 @import "tailwindcss";
+
+@theme {
+  --color-primary: #006194;
+  --color-primary-container: #004873;
+  --color-surface-container-low: #eff4ff;
+  --color-error-container: #ffdad6;
+  --color-tertiary: #006947;
+  --color-outline-variant: #bfc7d2;
+  --color-surface-variant: #d3e4fe;
+  --color-on-surface-variant: #3f4850;
+  --color-surface-bright: #f8f9ff;
+  --color-surface-dim: #cbdbf5;
+  --color-on-primary-fixed-variant: #004b73;
+  --color-surface-container-highest: #d3e4fe;
+  --color-outline: #707881;
+  --color-on-tertiary-container: #f5fff6;
+  --color-tertiary-container: #00855b;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-tint: #006398;
+  --color-surface: #f8f9ff;
+  --color-surface-container-high: #dce9ff;
+  --color-error: #ba1a1a;
+
+  --font-family-body-sm: "Manrope", sans-serif;
+  --font-family-mono-data: "Manrope", sans-serif;
+  --font-family-body-md: "Manrope", sans-serif;
+  --font-family-body-lg: "Manrope", sans-serif;
+  --font-family-headline-xl: "Manrope", sans-serif;
+  --font-family-headline-lg: "Manrope", sans-serif;
+  --font-family-label-caps: "Manrope", sans-serif;
+  --font-family-headline-md: "Manrope", sans-serif;
+  --font-family-headline-xl-mobile: "Manrope", sans-serif;
+  --font-family-headline-sm: "Manrope", sans-serif;
+  --font-family-table-header: "Manrope", sans-serif;
+  --font-family-display-lg: "Manrope", sans-serif;
+  --font-family-label-sm: "Manrope", sans-serif;
+  --font-family-telemetry-data: "Manrope", sans-serif;
+
+  --text-body-lg: 15px;
+  --leading-body-lg: 22px;
+  --tracking-body-lg: -0.005em;
+  --font-weight-body-lg: 400;
+
+  --text-table-header: 11px;
+  --leading-table-header: 14px;
+  --tracking-table-header: 0.05em;
+  --font-weight-table-header: 700;
+
+  --text-headline-xl: 32px;
+  --leading-headline-xl: 40px;
+  --tracking-headline-xl: -0.025em;
+  --font-weight-headline-xl: 700;
+
+  --text-body-sm: 12px;
+  --leading-body-sm: 16px;
+  --tracking-body-sm: 0em;
+  --font-weight-body-sm: 400;
+
+  --text-mono-data: 12px;
+  --leading-mono-data: 16px;
+  --tracking-mono-data: -0.01em;
+  --font-weight-mono-data: 500;
+
+  --text-body-md: 13px;
+  --leading-body-md: 18px;
+  --tracking-body-md: 0em;
+  --font-weight-body-md: 400;
+
+  --text-headline-lg: 24px;
+  --leading-headline-lg: 32px;
+  --tracking-headline-lg: -0.02em;
+  --font-weight-headline-lg: 600;
+
+  --text-label-caps: 11px;
+  --leading-label-caps: 14px;
+  --tracking-label-caps: 0.05em;
+  --font-weight-label-caps: 700;
+
+  --text-headline-md: 18px;
+  --leading-headline-md: 24px;
+  --tracking-headline-md: -0.015em;
+  --font-weight-headline-md: 600;
+
+  --text-headline-xl-mobile: 24px;
+  --leading-headline-xl-mobile: 30px;
+  --tracking-headline-xl-mobile: -0.02em;
+  --font-weight-headline-xl-mobile: 700;
+
+  --text-headline-sm: 15px;
+  --leading-headline-sm: 20px;
+  --tracking-headline-sm: -0.01em;
+  --font-weight-headline-sm: 600;
+
+  --text-telemetry-data: 26px;
+  --leading-telemetry-data: 32px;
+  --tracking-telemetry-data: -0.02em;
+  --font-weight-telemetry-data: 800;
+
+  --text-label-sm: 11px;
+  --leading-label-sm: 14px;
+  --tracking-label-sm: 0.03em;
+  --font-weight-label-sm: 600;
+
+  --spacing-space-md: 0.75rem;
+  --spacing-space-lg: 1rem;
+  --spacing-space-base: 1rem;
+}
+
+@layer utilities {
+  .font-mono-data {
+    font-family: "Manrope", sans-serif;
+  }
+}

@@ -4,7 +4,7 @@ import { severityColorClass, statusColorClass } from "./format";
 export function SeverityBadge({ severity }: { severity: Severity }) {
   return (
     <span
-      className={`inline-flex items-center rounded-full border px-2 py-0.5 text-xs font-semibold capitalize ${severityColorClass(severity)}`}
+      className={`inline-flex items-center rounded border px-2 py-0.5 text-xs font-semibold capitalize ${severityColorClass(severity)}`}
     >
       {severity}
     </span>
@@ -21,7 +21,7 @@ export function StatusBadge({ status }: { status: OutletStatus }) {
 
   return (
     <span
-      className={`inline-flex items-center rounded-full border px-2 py-0.5 text-xs font-semibold ${statusColorClass(status)}`}
+      className={`inline-flex items-center rounded border px-2 py-0.5 text-xs font-semibold ${statusColorClass(status)}`}
     >
       {label}
     </span>
