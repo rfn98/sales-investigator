@@ -1,4 +1,5 @@
 import { notFound } from "next/navigation";
+import Link from "next/link";
 import { SeverityBadge } from "../../../components/badges";
 import {
   changeColorClass,
@@ -257,18 +258,18 @@ export default async function OutletDetail({
         <p className="text-sm font-bold uppercase tracking-widest text-slate-300">
           Sales Investigator
         </p>
-        <a
-          href={`/outlets/${slug}/investigate?endDate=${endDate}`}
+        <Link
+          href={`/?investigate=${slug}&endDate=${endDate}`}
           className="rounded bg-indigo-600 px-5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-700"
         >
           Run Investigation
-        </a>
+        </Link>
       </div>
 
       <section>
-        <a href={`/?endDate=${endDate}`} className={linkClass}>
+        <Link href={`/?endDate=${endDate}`} className={linkClass}>
           ← Back to Outlets
-        </a>
+        </Link>
 
         <div className="mt-4">
           <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">
@@ -348,12 +349,12 @@ export default async function OutletDetail({
               engine.
             </p>
           </div>
-          <a
-            href={`/outlets/${slug}/investigate?endDate=${endDate}`}
+          <Link
+            href={`/?investigate=${slug}&endDate=${endDate}`}
             className="shrink-0 rounded bg-indigo-600 px-5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-700"
           >
             Run AI investigation →
-          </a>
+          </Link>
         </div>
       </section>
 

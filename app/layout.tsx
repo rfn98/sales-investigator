@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -27,24 +28,36 @@ export default function RootLayout({
       <body className="min-h-screen bg-surface text-slate-900 antialiased">
         <header className="border-b border-slate-200 bg-white">
           <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-            <a href="/" className="flex items-center gap-3">
-              <span className="flex h-9 w-9 items-center justify-center rounded bg-indigo-600 text-sm font-bold text-white">
-                AI
-              </span>
-              <span className="text-lg font-semibold tracking-tight">
-                Business Investigator
-              </span>
-            </a>
-            <nav className="flex items-center gap-5 text-sm text-slate-600">
-              <a
+            {/* Brand */}
+            <Link href="/" className="flex items-center gap-3">
+              <img
+                src="/signal-trace-logo.png"
+                alt="SignalTrace logo"
+                className="h-11 w-auto"
+              />
+
+              <div className="leading-none">
+                <div className="text-[15px] font-bold tracking-tight text-slate-900">
+                  SignalTrace
+                </div>
+                <div className="mt-1 text-[10px] font-medium uppercase tracking-[0.18em] text-slate-400">
+                  AI Investigation Engine
+                </div>
+              </div>
+            </Link>
+
+            {/* Navigation */}
+            <nav className="flex items-center gap-1">
+              <Link
                 href="/"
-                className="font-medium text-indigo-600 hover:underline"
+                className="rounded-md bg-slate-100 px-3 py-2 text-sm font-semibold text-indigo-600"
               >
                 Dashboard
-              </a>
+              </Link>
+
               <a
                 href="/api/report"
-                className="font-medium text-slate-600 hover:text-indigo-600 hover:underline"
+                className="rounded-md px-3 py-2 text-sm font-medium text-slate-500 transition-colors hover:bg-slate-50 hover:text-slate-900"
               >
                 API
               </a>

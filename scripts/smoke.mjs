@@ -98,7 +98,25 @@ try {
     const notFound = await get("/outlets/outlet-zzz");
     console.log("Unknown outlet HTTP:", notFound.status);
 
-    const invest = await get("/outlets/outlet-bekasi/investigate?endDate=2026-09-07");
+    // A cold home visit with ?investigate= must render the dashboard with the
+    // full-screen loader overlay instantly — no blocking LLM on the page.
+    const investCold = await get("/?endDate=2026-09-07&investigate=outlet-depok");
+    console.log(
+      "InvestigateCold:",
+      investCold.status,
+      "loader:",
+      investCold.text.includes("rl-scene"),
+      "progress:",
+      investCold.text.includes("Investigating"),
+      "blockedOnLlm:",
+      !investCold.text.includes("AI INVESTIGATION"),
+    );
+
+    // Internal `warm` render runs the LLM server-side so the dossier is
+    // embedded in the single-page home HTML for content verification.
+    const invest = await get("/?endDate=2026-09-07&investigate=outlet-bekasi&warm=1");
+    console.log("InvestigateWarm HTTP:", invest.status);
+
     console.log(
       "Investigate:",
       invest.status,
@@ -111,9 +129,9 @@ try {
       "whatWeKnow:",
       invest.text.includes("WHAT WE KNOW"),
       "recommendedActions:",
-      invest.text.includes("Recommended actions"),
+      invest.text.includes("RECOMMENDED ACTIONS"),
       "nextVectors:",
-      invest.text.includes("Next vectors"),
+      invest.text.includes("WHAT SHOULD WE INVESTIGATE NEXT?"),
       "evidenceGaps:",
       invest.text.includes("Evidence gaps"),
     );

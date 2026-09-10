@@ -102,7 +102,7 @@
   --tracking-label-sm: 0.03em;
   --font-weight-label-sm: 600;
 
-  --spacing-space-md: 0.75rem;
+--spacing-space-md: 0.75rem;
   --spacing-space-lg: 1rem;
   --spacing-space-base: 1rem;
 }
@@ -112,3 +112,4 @@
     font-family: "Manrope", sans-serif;
   }
 }
+
